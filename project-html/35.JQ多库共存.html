@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+    <script>
+        /*
+            jquery使用$作为标识符,随着jquery的流行,其他js库也会用这$作为标识符,这样一起使用会引起冲突
+            jq解决方案
+            1. 把里面的$符号改为jQuery比如jQuery.("div")
+            2.jQuery变量规定新的名称: var xxx = $.notConflict()
+        */
+        $(function(){
+            //第一种解决方法jQuery.each();
+            //第二种
+            var cscscs = $.noConflict();
+            console.log(cscscs("div"));
+        })
+    </script>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
