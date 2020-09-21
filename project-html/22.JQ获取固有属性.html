@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+    <script>
+        /*
+            1.设置或获取元素的属性值prop
+                获取:element.prop("属性名")
+                设置:element.prop("属性","属性值")
+            2.设置和获取元素自定义属性值attr()
+                获取:element.attr("属性名")
+                设置:element.attr("属性","属性值")
+            3.数据缓存data() 可以在指定元素上存取数据,并不会改变DOM解构,一旦页面刷新,之前存放的数据都将被移除
+                附加数据: data("name",value)
+                获取数据: data("name")
+        */
+        $(function(){
+            // 获取属性:
+            console.log($("div").prop("class"));
+            //设置属性:
+            $("div").prop("title","我们都挺好");
+
+            $("input").change(function(){
+                console.log($(this).prop("checked"));
+            });
+
+            //2.元素的自定义属性    通过attr()
+            //获取属性
+            console.log($("div").attr("index"));
+            //修改属性
+            $("div").attr("index",50);
+
+            //3.数据缓存
+            //1.附加数据
+            $("span").data("uname","andy");
+            //2.获取数据
+            console.log($("span").data("uname"));
+            //还能获取H5自定义的数据，不用写data-   返回值为数字型
+            console.log($("div").data("index"));
+        });
+    </script>
+</head>
+<body>
+    <div class="abcdefg" title="擦擦擦" index="10" data-index="5"></div>
+    <input type="checkbox" name="" id="" checked>
+    <span></span>
+</body>
+</html>

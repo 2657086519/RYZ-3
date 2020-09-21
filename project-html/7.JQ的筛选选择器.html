@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+    <script>
+        /*
+            :first      $('li:first')   获取第一个li元素
+            :last       $('li:last')    获取最后一个li元素
+            :eq(index)  $('li:eq(2)')   获取到的li元素中,选择引号为2的元素,索引从0开始
+            :odd        $('li:odd')     获取索引号为奇数的元素
+            :even       $('li:even')    获取索引号为偶数的元素
+        */
+        $(function(){
+            $('ul li:first').css("color","red")
+            $('ul li:last').css("color","pink")
+            $('ul li:odd').css("background-color","pink")
+            $('ul li:even').css("background-color","green")
+            $('ul li:eq(3)').css("font-size","2rem")
+        })
+    </script>
+</head>
+<body>
+        <ul>
+            <li>我擦类你好啊</li>
+            <li>我擦类你好啊</li>
+            <li>我擦类你好啊</li>
+            <li>我擦类你好啊</li>
+            <li>我擦类你好啊</li>
+            <li>我擦类你好啊</li>
+            <li>我擦类你好啊</li>
+        </ul>   
+</body>
+</html>

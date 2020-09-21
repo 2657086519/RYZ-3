@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+
+    <script>
+        $(function(){
+            //1.获取4个div元素
+            $('div')
+            //2.给四个div设置背景为粉色
+            //jquery设置样式   $('xxx').css('属性','值')
+            $('div').css('background-color','pink')
+            //3.隐式迭代九十八匹配到的所有元素的内部进行遍历循环,给每一个元素添加css这个方法
+            $('ul li').css('color','pink')
+
+        })
+    </script>
+</head>
+<body>
+    <div>惊喜不</div>
+    <div>惊喜不</div>
+    <div>惊喜不</div>
+    <div>惊喜不</div>
+    <ul>
+        <li>相同的操作</li>
+        <li>相同的操作</li>
+        <li>相同的操作</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tab_list .current{
+            background-color: red;
+            color: white;
+        }
+        .tab_list li{
+            float:left;
+            height: 39px;
+            line-height: 39px;
+            padding: 0 20px;
+            text-align: center;
+            cursor: pointer;
+            list-style: none;
+        }
+        .item{
+            display: none;
+        }
+    </style>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+            //1.点击上部的小li当前li添加到current类,其他兄弟元素移出类
+             $(".tab_list li").click(function(){
+                 //链式编程操作
+                 $(this).addClass("current").siblings().removeClass("current");
+                 var index = $(this).index();
+                 $(".tab_con .item").eq(index).show().siblings().hide();
+             });
+
+        })
+    </script>
+</head>
+<body>
+    <div class="tab">
+        <div class="tab_list">
+            <ul>
+                <li class="current">商品介绍</li>
+                <li>规格与包装</li>
+                <li>售后保障</li>
+                <li>商品评价(50000)</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="tab_con">
+            <div class="item" style="display: block;">商品介绍与模块内容</div>
+            <div class="item">规格与包装内容</div>
+            <div class="item">售后保障模块内容</div>
+            <div class="item">商品评价内容</div>
+            <div class="item">手机社区</div>
+        </div>
+    </div>
+</body>
+</html>

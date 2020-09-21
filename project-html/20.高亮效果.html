@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .warp{
+            width: 800px;
+            height: 800px;
+            border: 1px solid black;
+        }
+        li{
+            list-style: none;
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            margin: 20px;
+        }
+    </style>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+            $(".warp li").hover(function(){
+                $(this).siblings().stop().fadeTo(600,0.5);
+            },function(){
+                $(this).siblings().stop().fadeTo(600,1);
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class="warp">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>

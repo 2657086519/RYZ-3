@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(73, 118, 158);
+        }
+        div #box1{
+            width: 50px;
+            height: 50px;
+            background-color: blueviolet;
+        }
+    </style>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+    <script>
+        /*
+                jQuery基础选择器
+
+
+            ID选择器            $("#id")            获取id元素
+            全选选择器          $("*")              匹配所有元素
+            类选择器            $(".class")         获取同一类的class元素元素
+            标签选择器          $("div")            获取标签元素
+            并集选择器          $("div,p,span")     获取多个元素
+            交集选择器          $("div.a")          获取交集元素
+            子代选择器          $("ul>li")          使用>号获取亲儿子层级的元素,注意并不会获取孙子层级的元素
+            后代选择器          $("ul li")          使用空格,代表后代选择器,获取ul下所有的li元素,包括孙子等
+        */
+        $(function(){
+            // console.log($('#div1'));
+            // console.log($('.box'));
+            $('div #box1').hide();
+        })
+    </script>
+</head>
+<body>
+    <div class="box" id="div1">
+        <div id="box1"></div>
+    </div>
+</body>
+</html>

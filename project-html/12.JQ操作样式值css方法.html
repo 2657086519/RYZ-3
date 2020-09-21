@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+            $(".box").css({
+                //多个属性采取对象的语法规范
+                width:100,
+                height:100,
+                backgroundColor:"pink"
+                //如果是符合属性必须采取驼峰命名法,如果不是数字,则需要引号
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

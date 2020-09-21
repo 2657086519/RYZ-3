@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+
+</head>
+<body>
+    <script>
+        //1/等着页面DOM操作加载完毕再去执行js代码
+        // $(document).ready(function(){
+        //     $('div').hide();
+        // })
+        //2.更加简洁的方式
+        $(function(){
+            $('div').hide();
+        })
+    </script>
+    <div></div>
+</body>
+</html>

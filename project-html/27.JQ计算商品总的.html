@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            border: 1px solid black;
+            text-decoration: none;
+        }
+    </style>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+    <script>
+        /*
+            parents()   找到指定的祖先元素
+        
+        */
+        $(function(){
+            getSum();
+            $(".and").click(function(){
+                var n = $(this).siblings(".car").val();
+                n++;
+                $(this).siblings(".car").val(n);
+                var p = $(this).parent().siblings(".p-price").html();
+                p = p.substr(1);
+                let price = (p * n).toFixed(2);
+                $(this).parent().siblings(".p-sum").html("￥"+price);
+                getSum();
+            });
+            $(".noand").click(function(){
+                var n = $(this).siblings(".car").val();
+                if(n == 1){
+                    return false;
+                }
+                n--;
+                $(this).siblings(".car").val(n);
+                var p = $(this).parent().siblings(".p-price").html();
+                p = p.substr(1);
+                let price = (p * n).toFixed(2);
+                $(this).parent().siblings(".p-sum").html("￥"+price);
+                getSum();
+            });
+            $(".car").change(function(){
+                let m = $(this).val();
+                let n = $(this).parent().siblings(".p-price").html();
+                if(m < 1){
+                    alert("商品件数最小为1");
+                    return false;
+                }
+                n = n.substr(1);
+                let price = (m * n).toFixed(2);
+                $(this).parent().siblings(".p-sum").html("￥"+price);
+                getSum();
+            })
+            //封装函数
+            function getSum(){
+                var count = 0;//计算总件数
+                var money = 0;//计算总价钱
+                $(".car").each(function(i,ele){
+                    count += parseInt($(ele).val());
+                });
+                $(".amout-sun em").text(count);
+                $(".p-sum").each(function(i,ele){
+                    money += parseFloat($(ele).text().substr(1));
+                });
+                $(".price-sum em").text("￥"+money.toFixed(2));
+            }
+        })
+    </script>
+</head>
+<body>
+    <div class="moule_1">
+        <div class="p-price">￥12.60</div>
+        <div>
+            <a href="javascript:;" class="and">+</a>
+            <input type="text" class="car" value="1">
+            <a href="javascript:;" class="noand">-</a>
+        </div>
+        <div class="p-sum">￥12.60</div>
+    </div>
+    <div class="moule_2">
+        <div class="p-price">￥5.60</div>
+        <div>
+            <a href="javascript:;" class="and">+</a>
+            <input type="text" class="car" value="1">
+            <a href="javascript:;" class="noand">-</a>
+        </div>
+        <div class="p-sum">￥5.60</div>
+    </div>
+    <div class="toolbar">
+        <div class="amout-sun">已经选<em>1</em>件商品</div>
+        <div class="price-sum">总价: <em>￥12.60</em></div>
+        <div class="btn-area">去结算</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+    <script>
+        /*
+            这是第一种方法,比较复杂
+        */
+        // $(function(){
+        //     //鼠标经过
+        //     $(".nav>li").mouseover(function(){
+        //        // $(this)   jQuery  当前元素    this不要加引号
+        //        $(this).children("ul").show();
+        //        //show()显示出来
+        //     });
+        //     $(".nav>li").mouseout(function(){
+        //         $(this).children("ul").hide();
+        //     });
+        // })
+        /*
+            第二种方法,事件切换 hover(鼠标经过函数,鼠标离开函数)
+        */
+            // $(function(){
+            //     $(".nav>li").hover(function(){
+            //         $(this).children("ul").slideDown();
+            //     },function(){
+            //         $(this).children("ul").slideUp();
+            //     });
+                
+            // })
+        /*
+            第三种方法,最简单的方法 如果事件切换函数只写一种方法,那么鼠标经过离开都会触发这个
+        */
+            $(function(){
+                $(".nav>li").hover(function(){
+                    $(this).children("ul").stop().slideToggle();
+                    //这样会触发动画队列，运用stop()，必须写到动画的前面
+                });
+
+            });
+    </script>
+</head>
+<body>
+    
+    <ul class="nav">
+        <li>
+            <a href="#">微博</a>
+            <ul style="display: none;">
+                <li>
+                    <a href="#">私信</a>
+                </li>
+                <li>
+                    <a href="#">评论</a>
+                </li>
+                <li>
+                    <a href="#">@我</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    
+</body>
+</html>

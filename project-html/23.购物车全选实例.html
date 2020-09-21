@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+            $(".checkall").change(function(){
+                $(".j-checkbox, .checkall").prop("checked",$(this).prop("checked"));
+            });
+            $(".j-checkbox").change(function(){
+                if($(".j-checkbox:checked").length == $(".j-checkbox").length){
+                    $(".checkall").prop("checked",true);
+                }else{
+                    $(".checkall").prop("checked",false);
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    全选
+    <input type="checkbox" class="checkall"><br>
+    <input type="checkbox" class="j-checkbox"><br>
+    <input type="checkbox" class="j-checkbox"><br>
+    <input type="checkbox" class="j-checkbox"><br>
+    全选<input type="checkbox" class="checkall">
+</body>
+</html>

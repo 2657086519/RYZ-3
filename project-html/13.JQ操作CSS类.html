@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+            background-color: aqua;
+            transform: rotate(360deg);
+        }
+        div{
+            width: 100px;
+            border: 1px solid black;
+            height: 100px;
+            transition: ease-in-out 0.5s;
+        }
+    </style>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+    <script>
+        /*
+            添加类
+            $("xxx").addClass("xxx");
+            删除类
+            $("xxx").removeclass("xxx");
+            切换类
+            $("div").toggleclass("xxx");
+            注意添加的类名不用加点
+        */
+        $(function(){
+            $("div").click(function(){
+                // $("div").addClass("div1");
+                // $(this).removeClass("div1");
+                $(this).toggleClass("div1");
+            })
+
+        });
+    </script>
+</head>
+<body>
+    <div class="div1"></div>
+</body>
+</html>

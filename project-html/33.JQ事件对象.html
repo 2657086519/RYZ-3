@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+    <script>
+        //只要事件被触发,就会有事件对象
+        //阻止默认行为:event.preventDefault()或者return false
+        //阻止冒泡:event.stopPropagetion()
+        $(function(){
+            $(document).on("click",function(e){
+                console.log("你点击了docu");
+            })
+            $("div").on("click",function(e){
+                console.log("你点击了div");
+                event.stopPropagation();//停止冒泡
+            })
+        })
+    </script>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>

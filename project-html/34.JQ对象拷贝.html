@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+    <script>
+        /*
+            $.extend([deep],target.obj1,[objN])
+            对象拷贝
+            1.deep:如果为true为深拷贝,默认为false为浅拷贝
+            2.target:要拷贝的对象
+            3.obj1:待拷贝到第一个对象的对象
+            4.extend(1,2) 2拷贝到1
+        */
+        $(function(){
+            // var targetObj = {};
+            // var obj = {
+            //     id:1,
+            //     name:"and"
+            // }
+            // //$.extend(target,obj)
+            // $.extend(targetObj,obj);
+            // console.log(targetObj);
+
+            var targetObj = {
+                id:0
+            };
+            var obj = {
+                id:1,
+                name:"and"
+            }
+            //$.extend(target,obj)
+            $.extend(targetObj,obj);
+            console.log(targetObj);
+        })
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

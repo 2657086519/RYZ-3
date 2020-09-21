@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+    <script>
+         /*
+        
+                语法                 用法                        说明
+                parent()            $().parent();               查找父级
+                children()          $().children();             查找子集,亲儿子
+                find()              $().find();                 所有的孩子
+                sibings()           $("xxx").sibings("li")      查找兄弟节点
+                nextAll([expr])     $("xxx").nextAll()          查找当前元素之后的所有的同辈元素
+                prevtAll([expr])    $(".last").preAll()         查找当前元素之前所有的同辈元素
+                hasclass(class)      $('div').hasclass(".xxx")    查找是否包含特定的类
+                eq(index)           $("li").eq(2)               相当于$("li:eq(2)")下标从0开始
+        */
+        $(function(){
+            //除了自身查找同级元素
+            $("ol .item").siblings("li").css("color","red");
+            //查找某个元素
+            $("ul li:eq(2)").css("color","blue");
+            //查找类名是否符合
+            console.log($("div:first").hasClass("current"));
+        })
+    </script>
+</head>
+<body>
+    <ol>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li class="item">我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+    </ol>
+    <ul>
+        <li>我是ul的li</li>
+        <li>我是ul的li</li>
+        <li>我是ul的li</li>
+        <li>我是ul的li</li>
+        <li>我是ul的li</li>
+        <li>我是ul的li</li>
+    </ul>
+    <div class="current">
+        俺有current
+    </div>
+    <div>俺没有current</div>
+</body>
+</html>

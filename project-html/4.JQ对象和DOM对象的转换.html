@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        //1.直接获取jquery对象
+        // $('div');
+        //2.原生js获取dom对象
+        // var mydiv = document.querySelector('div');
+        //dom对象转换为jquery对象
+        // $(mydiv);
+        //jquery转换为dom对象
+        //$('div')[index] index为下标
+        //$('div').get(index)
+        $('div')[0].style.backgroundColor = "pink";
+    </script>
+</body>
+</html>
